@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @RestController
-@RequestMapping("fooddb")
+@RequestMapping("food")
 public class FoodController {
     @Autowired
     private FoodRepository repository;

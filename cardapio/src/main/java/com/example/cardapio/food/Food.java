@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Table(name = "foods")
 @Entity(name = "foods")
-@Getter //Gera todos os métodos de get em runtime
+@Getter
 @NoArgsConstructor //Declara um constructor que não tem argumentos
 @AllArgsConstructor //Aceita todos os argumentos do constructor
 @EqualsAndHashCode(of = "id") //Id é a representação única
