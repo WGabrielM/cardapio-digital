@@ -17,6 +17,7 @@ public class FoodController {
     @Autowired
     private CreateFoodService createFoodService;
 
+//  Create POST Rest API
     @PostMapping("/")
     public ResponseEntity<Object> create(@RequestBody FoodEntity foodEntity) {
         try {
@@ -27,6 +28,7 @@ public class FoodController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
 
     @Autowired
     private FoodRepository repository;
