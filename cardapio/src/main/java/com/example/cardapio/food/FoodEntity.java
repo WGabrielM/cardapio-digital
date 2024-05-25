@@ -1,20 +1,17 @@
 package com.example.cardapio.food;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import java.util.UUID;
 
-@Table(name = "foods")
-@Entity(name = "foods")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(of = "id")
+@Entity(name = "food")
 public class FoodEntity {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
     private String title;
     private String image;
     private Integer price;

@@ -2,5 +2,7 @@ package com.example.cardapio.food;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FoodRepository extends JpaRepository<FoodEntity, Long> {
+import java.util.UUID;
+
+public interface FoodRepository extends JpaRepository<FoodEntity, UUID> {
 }
