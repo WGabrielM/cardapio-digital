@@ -17,9 +17,13 @@ public class FoodController {
     @Autowired
     private CreateFoodService createFoodService;
 
-//  Create POST Rest API
+    @Autowired
+    private FoodRepository repository;
+
+//  POST: Create Food on Data Base by RequestBody
     @PostMapping("/")
-    public ResponseEntity<Object> create(@RequestBody FoodEntity foodEntity) {
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<Object> createFood(@RequestBody FoodEntity foodEntity) {
         try {
             var result = this.createFoodService.execute(foodEntity);
             return ResponseEntity.ok().body(result);
@@ -29,10 +33,9 @@ public class FoodController {
         }
     }
 
-
-    @Autowired
-    private FoodRepository repository;
+// Get: Get all Foods on Data Base
     @GetMapping
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     public List<FoodResponseDTO> getAll() {
         List<FoodResponseDTO> foodList = repository.findAll().stream().map(FoodResponseDTO::new).toList();
         return foodList;
