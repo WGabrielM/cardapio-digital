@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "food")
+@Table(name = "foods")
 @Entity(name = "food")
 @EqualsAndHashCode(of = "id")
 public class FoodEntity {
