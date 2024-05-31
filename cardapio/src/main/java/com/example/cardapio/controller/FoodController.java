@@ -21,7 +21,7 @@ public class FoodController {
     private FoodRepository repository;
 
 //  POST: Create Food on Data Base by RequestBody
-    @PostMapping("/")
+    @PostMapping
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ResponseEntity<Object> createFood(@RequestBody FoodEntity foodEntity) {
         try {
