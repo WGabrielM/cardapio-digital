@@ -3,9 +3,15 @@ import { useFoodData } from "./hooks/useFoodData";
 import "./App.css";
 
 import Card from "./components/Card";
+import { CreateModal } from "./components/Create-Modal";
 
 function App() {
   const { data } = useFoodData();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(prev => !prev)
+  }
 
   return (
     <div className="container">
@@ -19,6 +25,8 @@ function App() {
           />
         ))}
       </div>
+      {isModalOpen && <CreateModal closeModal={handleOpenModal}/>}
+      <button onClick={handleOpenModal}>new</button>
     </div>
   );
 }

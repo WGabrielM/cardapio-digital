@@ -12,9 +12,8 @@ const postData = async (data: FoodData): AxiosPromise<any> => {
 export function useFoodDataMutate() {
     const queryClient = useQueryClient();
     const mutate = useMutation({
-        retry: 2,
         mutationFn: postData,
-        // Invalidate the oldest query and get the new one
+        retry: 2,
         onSuccess: () => {
             queryClient.invalidateQueries(['food-data'])
         }
